@@ -6,307 +6,51 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen color="dark">
-  <ion-searchbar placeholder="Pesquisar Pokemon" color="medium"> </ion-searchbar>
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">001</ion-label>
+<ion-content  color="dark">
+ <ion-item-sliding *ngFor="let pokemon of listaPokemonExibir">
+  <ion-item color="light">
+      <ion-chip [color]="pokemon.types[0].type.name | lowercase" slot="start">
+        <ion-label [color]="pokemon.types[0].type.name | lowercase">{{pokemon.id}}</ion-label>
       </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> bulbasaur </h2>
-          <ion-badge color="success">Grass</ion-badge>
-          <ion-badge color="tertiary">Poison</ion-badge>
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
-      </ion-thumbnail>
-
-
-  
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">004</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Charmander </h2>
-          <ion-badge color="danger">Fire</ion-badge>
       
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">007</ion-label>
-      </ion-chip>
-
       <ion-label>
-        <div>
-          <h2> Squirtle </h2>
-          <ion-badge color="secondary">Water</ion-badge>
-      
-
-        </div>
-
+          <div>
+            <h2>{{pokemon.name}}</h2>
+            <ion-badge [color]="tipo.type.name | lowercase" ngFor="let tipo of pokemon.types" >{{tipo.type.name}}</ion-badge>
+          </div>
       </ion-label>
 
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png">
+      <ion-thumbnail slot="end">
+        <img [src]="pokemon.sprites.front_default" alt="">
       </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
+
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="danger">
+        <ion-icon slot="ion-only" name="trash"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
   </ion-item-sliding>
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">025</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Pikachu </h2>
-          <ion-badge color="warning">Eletric</ion-badge>
-      
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">031</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Nidoqueen </h2>
-          <ion-badge color="tertiary">Poison</ion-badge>
-          <ion-badge color="warning">Ground</ion-badge>
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/031.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">034</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Nidoking </h2>
-          <ion-badge color="tertiary">poison</ion-badge>
-          <ion-badge color="warning">Ground</ion-badge>
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/034.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">038</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Ninetales </h2>
-          <ion-badge color="danger">Fire</ion-badge>
-     
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">055</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Golduck </h2>
-          <ion-badge color="secondary">Water</ion-badge>
-     
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/055.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">059</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Arcanine</h2>
-          <ion-badge color="danger">Fire</ion-badge>
-     
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-  <ion-item-sliding>
-    <ion-item color="dark">
-
-      <ion-chip slot="start">
-        <ion-label color="warning">059</ion-label>
-      </ion-chip>
-
-      <ion-label>
-        <div>
-          <h2> Hitmonchan </h2>
-          <ion-badge color="danger">Fighting</ion-badge>
-     
-
-        </div>
-
-      </ion-label>
-
-      <ion-thumbnail>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/107.png">
-      </ion-thumbnail>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="warning">Alterar</ion-item-option>
-      <ion-item-option color="darger">Exluir</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-
-
-
-
 
 </ion-content>
+
+    <ion-footer>
+<ion-toolbar color="tertiary" class="ion-text-center">
+
+          <ion-buttons slot="start" *ngIf="pagina > 1 ">
+            <ion-button expand="block" color="dark" (click)="paginacao(previous, - 1)">
+              <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+              {{pagina}} de {{(totalPaginas).toFixed(0)}}
+
+          <ion-buttons slot="end" *ngIf="pagina < 1 totalPaginas">
+            <ion-button expand="block" color="dark" (click)="paginacao(next,  1)">
+              <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+
+        </ion-toolbar>
+
+
+    </ion-footer>
