@@ -19,11 +19,14 @@ export class HomePage {
   public listaPokemonExibir = [];
 
 
+
+
   constructor(private pokemonApi: PokemonapiService) {
-    this.buscarPokemons();
+    this.buscarPokemons;
   }
-  public async buscarPokemons() {
-    await this.pokemonApi.buscarPokemons().subscribe(dados => {
+  
+  public buscarPokemons() {
+     this.pokemonApi.buscarPokemons().subscribe(dados => {
       this.listaPokemonApi = [];
       this.totalPaginas = dados['count'] / 10;
 

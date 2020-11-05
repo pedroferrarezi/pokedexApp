@@ -7,18 +7,18 @@ import { Injectable } from '@angular/core';
 export class PokemonapiService {
   
 
- public url = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0';
+  public url = 'https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0';
 
 
   constructor(private http: HttpClient) { }
  
 
 public buscarPokemons(){
-return this.http.get(`${this.url}`)
+return this.http.get(this.url);
 
 }
 
 public buscarPokemonNumero(url: string){
-  return this.http.get(url)
+  return this.http.get(url);
 }
 }
